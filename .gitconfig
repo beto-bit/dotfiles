@@ -1,0 +1,19 @@
+[user]
+	name = beto-bit
+	email = 76757367+beto-bit@users.noreply.github.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential]
+	helper = cache --timeout=6048000
+[alias]
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	undo = reset HEAD^
+	ci = commit
+	graph = log --oneline --graph --all --decorate
+    diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+	co = checkout
