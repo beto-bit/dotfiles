@@ -1,0 +1,2 @@
+# dotfiles
+Basically, my configs.
