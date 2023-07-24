@@ -2,6 +2,10 @@
 set nocompatible
 set background=dark
 
+if has('termguicolors')
+    set termguicolors
+endif
+
 " UTF-8 enconding
 set encoding=utf8
 
@@ -59,10 +63,6 @@ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Color theme
-if has('termguicolors')
-    set termguicolors
-endif
-
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 
