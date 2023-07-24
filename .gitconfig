@@ -17,3 +17,6 @@
 	graph = log --oneline --graph --all --decorate
     diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 	co = checkout
+
+[init]
+	defaultBranch = main

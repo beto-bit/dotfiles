@@ -113,3 +113,13 @@ unset LESS
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Enable rtx-cli
+eval "$(rtx activate zsh)"
+
+# Enable thefuck
+eval $(thefuck --alias)
+
+# Maybe fix completions?
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
