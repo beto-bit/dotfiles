@@ -40,10 +40,8 @@ set smartcase
 set wildmenu
 set wildmode=list:longest
 
-" STATUS LINE
-" Default status line
-" set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
+" For some reason, Vim only opens .asm files correctly the first time
+au BufNewFile,BufRead,BufReadPost *.asm set syntax=asm
 
 
 " Vim-plug autoinstall
