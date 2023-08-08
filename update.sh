@@ -14,3 +14,4 @@ cp ~/.profile .
 cp ~/.tmux.conf .
 cp ~/.vimrc .
 cp ~/.zshrc .
+cp ~/.gdbinit .
