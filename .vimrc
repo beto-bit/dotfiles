@@ -57,6 +57,7 @@ call plug#begin()
 Plug 'sheerun/vim-polyglot'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'cohama/lexima.vim'
 
 call plug#end()
 
