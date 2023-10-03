@@ -1,4 +1,5 @@
 set disassembly-flavor intel
+set print asm-demangle on
 
 # Custom TUI layouts
 tui new-layout asm-regs {-horizontal asm 3 regs 2} 2 status 0 cmd 1
