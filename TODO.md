@@ -24,3 +24,16 @@ Luego Hacer la cosa de GH. También se pueden crear claves para la otra cuenta.
 Instalar [delta](https://github.com/dandavison/delta)
 `pacman -S git-delta`
 
+
+## yay
+Instalar
+```
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+```
+
+Primer uso
+`yay -Y --gendb`
+`yay -Syu --devel`
+`yay -Y --devel --save`
+
+
