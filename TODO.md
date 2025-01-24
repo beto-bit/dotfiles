@@ -37,3 +37,12 @@ Primer uso
 `yay -Y --devel --save`
 
 
+## Vim
+`pacman -S vim`
+
+Instalar Plug
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+
+Correr `:PlugInstall` dentro de `vim`
+
