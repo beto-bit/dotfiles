@@ -47,6 +47,10 @@ Instalar Plug
 Correr `:PlugInstall` dentro de `vim`
 
 
+## Tmux
+`pacman -S tmux`
+
+
 ## zsh + Oh My Zsh
 `pacman -S zsh`
 
@@ -75,4 +79,73 @@ Enable
 
 ## Terminal
 `sudo pacman -S kitty`
+
+
+## CLI Utils
+```
+sudo pacman -S \
+    wl-clipboard \
+    grep ripgrep \
+    eza \
+    batcat batextras \
+    fd \
+    btop \
+    7zip \
+    cliphist \
+    dog \
+    ffmpeg \
+    jq \
+    fzf \
+    nmap \
+    sed \
+    wget \
+    xdg-utils
+```
+
+
+## Programming Utils
+```
+sudo pacman -S \
+    gcc clang nasm \
+    make cmake meson \
+    
+```
+
+
+**Rust**
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+Instalar Nightly
+`rustup toolchain install nightly`
+
+
+**Nvm**
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash`
+
+
+**Pyenv**
+`curl -fsSL https://pyenv.run | bash`
+
+
+## Desktop Utils
+```
+sudo pacman -S \
+    labplot \
+    vlc mpv \
+    libreoffice-fresh \
+    obs-studio \
+    obsidian \
+    imv \
+    oculante \
+    dot-matrix
+    # inkscape \
+    silicon # code to image \
+```
+
+
+## Funny Desktop Things
+```
+sudo pacman -S \
+    vbam-wx
+```
 
