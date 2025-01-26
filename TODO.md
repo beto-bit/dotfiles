@@ -61,6 +61,18 @@ Correr `:PlugInstall` dentro de `vim`
 
 
 ## Nvim
-Clonar mi repo
+Clonar mi repo al folder indicado
 `git clone -b revamp git@github.com:beto-bit/nvim-config.git .config/nvim`
+
+
+## Login
+Install
+`sudo pacman -S greetd greetd-tuigreet`
+
+Enable
+`sudo systemctl enable greetd.service`
+
+
+## Terminal
+`sudo pacman -S kitty`
 
