@@ -46,3 +46,17 @@ Instalar Plug
 
 Correr `:PlugInstall` dentro de `vim`
 
+
+## zsh + Oh My Zsh
+`pacman -S zsh`
+
+Oh My Zsh
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+Fzf Tab
+`git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab`
+
+Fzf Autosuggestions
+`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
+
