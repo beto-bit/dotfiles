@@ -3,26 +3,26 @@ Instalar Arch. Script de referencia aquí: `scripts/archinstall.sh`
 
 
 ## Stow
-`pacman -S stow`
+```pacman -S stow```
 
 
 ## SSH + Git
-`pacman -S openssh git`
+```pacman -S openssh git```
 
 
 ## SSH
 Generar claves
-`ssh-keygen -t ed25519 -C "76757367+beto-bit@users.noreply.github.com"`
+```ssh-keygen -t ed25519 -C "76757367+beto-bit@users.noreply.github.com"```
 
 Añadir clave SSH a `ssh-agent`
-`eval "$(ssh-agent -s)" && ssh-add ~/.ssh/beto`
+```eval "$(ssh-agent -s)" && ssh-add ~/.ssh/beto```
 
 Luego Hacer la cosa de GH. También se pueden crear claves para la otra cuenta.
 
 
 ## Git
 Instalar [delta](https://github.com/dandavison/delta)
-`pacman -S git-delta`
+```pacman -S git-delta```
 
 
 ## yay
@@ -32,71 +32,74 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 ```
 
 Primer uso
-`yay -Y --gendb`
-`yay -Syu --devel`
-`yay -Y --devel --save`
+```yay -Y --gendb```
+```yay -Syu --devel```
+```yay -Y --devel --save```
 
 
 ## Vim
 `pacman -S vim`
 
 Instalar Plug
-`curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 Correr `:PlugInstall` dentro de `vim`
 
 
 ## Tmux
-`pacman -S tmux`
+```pacman -S tmux```
 
 
 ## zsh + Oh My Zsh
-`pacman -S zsh`
+```pacman -S zsh```
 
 **Oh My Zsh**
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"```
 
 **Fzf Tab**
-`git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab`
+```git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab```
 
 **Fzf Autosuggestions**
-`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+```git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions```
 
 
 ## Firewall
-`sudo pacman -S ufw`
+```sudo pacman -S ufw```
 
-`sudo ufw enable`
+```sudo ufw enable```
 
 
 
 ## Nvim
 Clonar mi repo al folder indicado
-`git clone -b revamp git@github.com:beto-bit/nvim-config.git .config/nvim`
+```git clone -b revamp git@github.com:beto-bit/nvim-config.git .config/nvim```
 
 
 ## Login
 Install
-`sudo pacman -S greetd greetd-tuigreet`
+```sudo pacman -S greetd greetd-tuigreet```
 
 Enable
-`sudo systemctl enable greetd.service`
+```sudo systemctl enable greetd.service```
 
 
 ## Fonts
-`sudo pacman -S \
+```
+sudo pacman -S \
     ttf-ms-win11-auto \
     ttf-cascadia-code \
     ttf-fira-code ttf-hack \
     ttf-jetbrains-mono-nerd \
     adobe-source-sans-pro-fonts \
     ttf-ubuntu-font-family
-`
+```
 
 
 ## Terminal
-`sudo pacman -S kitty`
+```sudo pacman -S kitty```
 
 
 ## CLI Utils
@@ -149,23 +152,23 @@ sudo pacman -S brightnessctl
 
 
 **Rust**
-`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 
 Instalar Nightly
-`rustup toolchain install nightly`
+```rustup toolchain install nightly```
 
 
 **Nvm**
-`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash`
+```curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash```
 
 
 **Pyenv**
-`curl -fsSL https://pyenv.run | bash`
+```curl -fsSL https://pyenv.run | bash```
 
 
 ## XDG Folders
-`sudo pacman -S xdg-user-dirs`
-`xdg-user-dirs-update`
+```sudo pacman -S xdg-user-dirs```
+```xdg-user-dirs-update```
 
 
 ## Desktop Utils
@@ -192,7 +195,7 @@ sudo pacman -S \
 
 
 ## Firefox
-`sudo pacman -S firefox`
+```sudo pacman -S firefox```
 
 Instalar [Betterfox](https://github.com/yokoffing/Betterfox?tab=readme-ov-file)
 
@@ -206,14 +209,14 @@ Pendiente
 
 
 ## Hyprland
-Foreplay
+**Foreplay**
 ```
 sudo pacman -S \
     mako \
     polkit polkit-gnome
 ```
 
-jaiperlan
+**jaiperlan**
 ```
 sudo pacman -S \
     hyprland \
@@ -226,6 +229,22 @@ sudo pacman -S \
     # hyprland-qtutils \
     xdg-desktop-portal-hyprland
 ```
+
+
+**Loox**
+```
+sudo pacman -S \
+    nwg-look
+```
+
+
+**Menu Rofi**
+```sudo pacman -S rofi-wayland```
+
+Generar configuración
+```mkdir -p ~/.config/rofi && rofi -dump-config > ~/.config/rofi/config.rasi```
+
+
 
 
 ## Optional
