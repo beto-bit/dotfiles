@@ -64,6 +64,13 @@ Correr `:PlugInstall` dentro de `vim`
 `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
 
+## Firewall
+`sudo pacman -S ufw`
+
+`sudo ufw enable`
+
+
+
 ## Nvim
 Clonar mi repo al folder indicado
 `git clone -b revamp git@github.com:beto-bit/nvim-config.git .config/nvim`
@@ -75,6 +82,17 @@ Install
 
 Enable
 `sudo systemctl enable greetd.service`
+
+
+## Fonts
+`sudo pacman -S \
+    ttf-ms-win11-auto \
+    ttf-cascadia-code \
+    ttf-fira-code ttf-hack \
+    ttf-jetbrains-mono-nerd \
+    adobe-source-sans-pro-fonts \
+    ttf-ubuntu-font-family
+`
 
 
 ## Terminal
@@ -99,7 +117,8 @@ sudo pacman -S \
     nmap \
     sed \
     wget \
-    xdg-utils
+    xdg-utils \
+    slurp grim \
 ```
 
 
@@ -109,6 +128,23 @@ sudo pacman -S \
     gcc clang nasm \
     make cmake meson \
     
+```
+
+
+## Audio
+```
+sudo pacman -S \
+    pavucontrol \
+    pipewire pipewire-pulse \
+    wireplumber \
+    whisper # audio recording \
+    # amixer
+```
+
+
+## Brillo
+```
+sudo pacman -S brightnessctl
 ```
 
 
@@ -125,6 +161,11 @@ Instalar Nightly
 
 **Pyenv**
 `curl -fsSL https://pyenv.run | bash`
+
+
+## XDG Folders
+`sudo pacman -S xdg-user-dirs`
+`xdg-user-dirs-update`
 
 
 ## Desktop Utils
@@ -148,4 +189,55 @@ sudo pacman -S \
 sudo pacman -S \
     vbam-wx
 ```
+
+
+## Firefox
+`sudo pacman -S firefox`
+
+Instalar [Betterfox](https://github.com/yokoffing/Betterfox?tab=readme-ov-file)
+
+
+## [Labwc](https://github.com/labwc/labwc)
+Pendiente
+
+
+## [Cage](https://github.com/cage-kiosk/cage)
+Pendiente
+
+
+## Hyprland
+Foreplay
+```
+sudo pacman -S \
+    mako \
+    polkit polkit-gnome
+```
+
+jaiperlan
+```
+sudo pacman -S \
+    hyprland \
+    hypridle \
+    hyprcursor \
+    hyprpaper \
+    hyprlang \
+    hyprpicker \
+    # hyprland-qt-support \
+    # hyprland-qtutils \
+    xdg-desktop-portal-hyprland
+```
+
+
+## Optional
+`pacseek` - Pacman TUI
+
+Desactivar el delay de GRUB en `/etc/default/grub` con `GRUB_TIMEOUT_STYLE=hidden`
+
+
+### SSD Optimization
+Revisar si hay soporte con `lsblk --discard`. Está soportado si hay valores no nulos.
+
+Instalar `util-linux`
+
+Habilitar el servicio `fstrim.service` y `fstrim.timer`. El tiempo por defecto es cada semana.
 
