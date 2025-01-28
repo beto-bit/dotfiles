@@ -41,6 +41,9 @@ swapon /dev/sda2
 # Instalación
 vim /etc/pacman.conf
 # Parallel = 5
+# Color
+# ILoveCandy
+# VerbosePkgLists
 
 # Cambiar mirrors
 pacman -Syy # Sync
