@@ -150,3 +150,9 @@ vim /etc/default/cpupower
 systemctl enable cpupower
 
 
+# Internet Postinstall
+vim /etc/resolv.conf
+# nameserver 1.1.1.1
+# nameserver 8.8.8.8
+
+

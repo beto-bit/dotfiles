@@ -284,6 +284,22 @@ Más info [aquí](https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/)
 
 
 
+## Printing
+```
+sudo pacman -S avahi cups cups-pdf
+```
+
+Siempre activo
+```
+sudo systemctl enable cups.service
+```
+
+Activo cuando se solicita
+```
+sudo systemctl enable cups.socket
+```
+
+
 ## Optional
 `pacseek` - Pacman TUI
 `yazi` - File Explorer
