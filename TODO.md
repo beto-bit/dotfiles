@@ -127,7 +127,8 @@ sudo pacman -S \
     wget \
     xdg-utils \
     slurp grim \
-    hexyl
+    hexyl \
+    neofetch freshfetch
 ```
 
 
@@ -158,7 +159,7 @@ Instalar Nightly
 ## Audio
 ```
 sudo pacman -S \
-    pavucontrol \
+    pavucontrol # pwvucontrol en yay \
     pipewire pipewire-pulse \
     wireplumber \
     whisper # audio recording \
@@ -199,6 +200,11 @@ sudo pacman -S \
 ```
 sudo pacman -S \
     vbam-wx
+    flatpak
+```
+
+```
+flatpak install modrinth
 ```
 
 
