@@ -52,6 +52,11 @@ Correr `:PlugInstall` dentro de `vim`
 ## Tmux
 ```pacman -S tmux```
 
+**Instalar TPM**
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 
 ## zsh + Oh My Zsh
 ```pacman -S zsh```
@@ -122,6 +127,7 @@ sudo pacman -S \
     wget \
     xdg-utils \
     slurp grim \
+    hexyl
 ```
 
 
@@ -130,8 +136,23 @@ sudo pacman -S \
 sudo pacman -S \
     gcc clang nasm \
     make cmake meson \
+    gdb
     
 ```
+
+**Rust**
+```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
+
+Instalar Nightly
+```rustup toolchain install nightly```
+
+
+**Nvm**
+```curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash```
+
+
+**Pyenv**
+```curl -fsSL https://pyenv.run | bash```
 
 
 ## Audio
@@ -151,21 +172,6 @@ sudo pacman -S brightnessctl
 ```
 
 
-**Rust**
-```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
-
-Instalar Nightly
-```rustup toolchain install nightly```
-
-
-**Nvm**
-```curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash```
-
-
-**Pyenv**
-```curl -fsSL https://pyenv.run | bash```
-
-
 ## XDG Folders
 ```sudo pacman -S xdg-user-dirs```
 ```xdg-user-dirs-update```
@@ -174,6 +180,8 @@ Instalar Nightly
 ## Desktop Utils
 ```
 sudo pacman -S \
+    ark \
+    gnome-disk-utility \
     labplot \
     vlc mpv \
     libreoffice-fresh \
@@ -199,6 +207,9 @@ sudo pacman -S \
 
 Instalar [Betterfox](https://github.com/yokoffing/Betterfox?tab=readme-ov-file)
 
+Tema Main: "Cheers - Bold"
+Tema OFF: "Matte Black (Red)"
+
 
 ## [Labwc](https://github.com/labwc/labwc)
 Pendiente
@@ -213,7 +224,7 @@ Pendiente
 ```
 sudo pacman -S \
     mako \
-    polkit polkit-gnome
+    polkit polkit-gnome # hyprpolkitagent
 ```
 
 **jaiperlan**
@@ -225,8 +236,11 @@ sudo pacman -S \
     hyprpaper \
     hyprlang \
     hyprpicker \
-    # hyprland-qt-support \
-    # hyprland-qtutils \
+    hyprland-qt-support \
+    hyprland-qtutils \
+    hyprwayland-scanner \
+    # hyprsysteminfo \
+    aquamarine \
     xdg-desktop-portal-hyprland
 ```
 
@@ -234,7 +248,23 @@ sudo pacman -S \
 **Loox**
 ```
 sudo pacman -S \
-    nwg-look
+    nwg-look \
+    gtk2 gtk3 gtk4 \
+    qt4ct qt5ct qt6ct \
+    qt5-wayland qt6-wayland \
+    breeze breeze5 breeze-gtk breeze-icons
+```
+
+
+**Dolphin**
+```
+sudo pacman -S dolphin
+```
+
+Configurar `~/.config/kdeglobals`
+```
+[Colors:View]
+BackgroundNormal=#2E2E2E
 ```
 
 
@@ -244,11 +274,19 @@ sudo pacman -S \
 Generar configuración
 ```mkdir -p ~/.config/rofi && rofi -dump-config > ~/.config/rofi/config.rasi```
 
+Mi tema: "rounded-red-dark.rasi". Probablemente en `~/.local/share/rofi/themes`
+
+
+### Optional
+Para compartir video con apps de `XWayland` se necesita de `xwaylandvideobridge`
+Más info [aquí](https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/)
+
 
 
 
 ## Optional
 `pacseek` - Pacman TUI
+`yazi` - File Explorer
 
 Desactivar el delay de GRUB en `/etc/default/grub` con `GRUB_TIMEOUT_STYLE=hidden`
 
