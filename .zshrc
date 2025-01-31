@@ -112,10 +112,11 @@ zstyle ':omz:plugins:eza' 'icons' yes # <- This currently does not work!
 alias eza='eza --icons'
 alias exa='eza --icons'
 
-source /usr/share/nvm/init-nvm.sh
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(fzf --zsh)"
+
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
