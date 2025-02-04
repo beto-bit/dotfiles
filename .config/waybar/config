@@ -1,0 +1,146 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/right-arrow-dark",
+		"hyprland/window",
+	],
+
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#4",
+		"custom/right-arrow-dark"
+	],
+
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"backlight",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"network",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+
+	"hyprland/window": {
+		"format": "{title}",
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "Mozilla Firefox",
+			"imv - (.*)": "imv"
+		}
+	},
+
+	"clock#4": {
+		"format": "{:%H:%M}",
+		"format-alt": "{:L%a %d-%m}",
+		"tooltip": false,
+		"locale": "es_GT.utf8"
+	},
+
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"󰃞",
+			"󰃟",
+			"󰃠",
+		]
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": " {icon} {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphone": "",
+			"default": [
+				"󰕿",
+				"󰖀",
+				"󰕾"
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pavucontrol"
+	},
+
+	"memory": {
+		"interval": 5,
+		"format": "  Mem {}%"
+	},
+
+	"cpu": {
+		"interval": 5,
+		"format": "󰍛 CPU {usage}%"
+	},
+
+	"battery": {
+		"states": {
+			"great": 100,
+			"good": 80,
+			"warning": 35,
+			"critical": 20
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󱐋 {icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+
+	"network": {
+		"format-wifi": "{icon} {essid}",
+		"format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰤮 ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)"
+	},
+
+	"tray": {
+		"icon-size": 20
+	}
+}

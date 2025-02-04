@@ -328,6 +328,7 @@ mkdir -p ~/.config/rofi && rofi -dump-config > ~/.config/rofi/config.rasi
 ```
 
 Mi tema: "rounded-red-dark.rasi". Probablemente en `~/.local/share/rofi/themes`
+Aparentemente en "rofi-themes-collectio"
 
 
 ### Optional
