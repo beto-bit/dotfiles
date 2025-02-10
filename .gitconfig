@@ -2,6 +2,12 @@
 	name = beto-bit
 	email = 76757367+beto-bit@users.noreply.github.com
 
+[includeIf "hasconfig:remote.*.url:git@github.uni:Alberto-V-USAC/**"]
+	path = ~/gitcfg/.gitconfig-uni
+
+[includeIf "gitdir:~/projects/uni/"]
+	path = ~/gitcfg/.gitconfig-uni
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
