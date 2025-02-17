@@ -1,0 +1,13 @@
+[open]
+prepend_rules = [
+    { mime = "audio/*", use = "beat" },
+]
+
+[opener]
+beat = [
+    { run = 'kew song "$(basename "$@")" ', block = true }
+]
+edit = [
+    { run = '$EDITOR "$@"', block = true },
+]
+
