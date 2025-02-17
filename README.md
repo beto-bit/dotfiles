@@ -369,3 +369,11 @@ Instalar `util-linux`
 
 Habilitar el servicio `fstrim.service` y `fstrim.timer`. El tiempo por defecto es cada semana.
 
+
+### Printers
+La única impresora que uso es la Canon Pixma E402
+Para esto, hay que instalar `cups`, `cups-pdf` y `cnijfilter-e400`. Y luego añadir la versión que aparece sin el "USB"
+
+Ahora bien, para escanear, se instala `sane`, `ipp-usb` y `simple-scan` como frontend.
+Se habilita el `ipp-usb.service` y ya.
+
