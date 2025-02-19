@@ -105,6 +105,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Some aliases
+source $HOME/.aliases
+
 # eza icons
 zstyle ':omz:plugins:eza' 'icons' yes # <- This currently does not work!
 
