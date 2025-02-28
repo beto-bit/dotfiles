@@ -73,6 +73,8 @@ Plug 'tpope/vim-commentary'
 Plug 'romainl/vim-cool'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-vinegar'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
