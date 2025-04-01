@@ -131,7 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Bat theme
-export BAT_THEME="gruvbox-dark"
+# export BAT_THEME="gruvbox-dark"
 
 
 # Yazi shell wrapper
