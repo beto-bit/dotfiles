@@ -20,7 +20,7 @@
 
   <keyboard>
     <default />
-    <numlock />
+    <numlock>true</numlock>
 
     <keybind key="W-q">
       <action name="Execute" command="kitty" />
