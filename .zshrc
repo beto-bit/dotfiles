@@ -115,6 +115,9 @@ zstyle ':omz:plugins:eza' 'icons' yes # <- This currently does not work!
 alias eza='eza --icons'
 alias exa='eza --icons'
 
+# fzf preview alias
+alias prev='fzf --preview "bat --color=always {}"'
+
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -128,10 +131,6 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# Bat theme
-# export BAT_THEME="gruvbox-dark"
 
 
 # Yazi shell wrapper
