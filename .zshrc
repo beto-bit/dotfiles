@@ -111,14 +111,6 @@ source $HOME/.aliases
 # eza icons
 zstyle ':omz:plugins:eza' 'icons' yes # <- This currently does not work!
 
-# Aliases for eza and exa
-alias eza='eza --icons'
-alias exa='eza --icons'
-
-# fzf preview alias
-alias prev='fzf --preview "bat --color=always {}"'
-
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(fzf --zsh)"
