@@ -1,74 +1,67 @@
-AccessModifierOffset: -4
-AlignAfterOpenBracket: BlockIndent
-AlignConsecutiveMacros: false
-AlignConsecutiveAssignments: false
-AlignConsecutiveDeclarations: false
-AlignEscapedNewlines: DontAlign
-AlignOperands: false
-AlignTrailingComments: false
-AllowAllArgumentsOnNextLine: false
-AllowAllConstructorInitializersOnNextLine: false
-AllowAllParametersOfDeclarationOnNextLine: false
-AllowShortBlocksOnASingleLine: Empty
-AllowShortCaseLabelsOnASingleLine: false
-AllowShortCompoundRequirementOnASingleLine: true
-AllowShortFunctionsOnASingleLine: Empty
-AllowShortIfStatementsOnASingleLine: Never
-AllowShortLambdasOnASingleLine: All
-AllowShortLoopsOnASingleLine: false
-AlwaysBreakAfterReturnType: None
-AlwaysBreakBeforeMultilineStrings: true
-AlwaysBreakTemplateDeclarations: Yes
-BinPackArguments: false
-BinPackParameters: false
-BreakBeforeBinaryOperators: NonAssignment
-BreakBeforeBraces: Custom
-BreakBeforeConceptDeclarations: Always
-BreakBeforeTernaryOperators: true
-BraceWrapping:
-  AfterControlStatement: MultiLine
-  AfterEnum: false
-  AfterStruct: false
-  SplitEmptyFunction: false
-BreakConstructorInitializers: AfterColon
-BreakInheritanceList: AfterColon
-BreakStringLiterals: false
-ColumnLimit: 100
-CompactNamespaces: false
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
-ConstructorInitializerIndentWidth: 4
-ContinuationIndentWidth: 4
-Cpp11BracedListStyle: false
-DerivePointerAlignment: false
-FixNamespaceComments: true
-IncludeBlocks: Preserve
-IncludeIsMainRegex: '([-_](test|unittest))?$'
-IndentCaseLabels: true
-IndentPPDirectives: BeforeHash
-IndentWidth: 4
-IndentWrappedFunctionNames: false
-KeepEmptyLinesAtTheStartOfBlocks: false
-MaxEmptyLinesToKeep: 1
-NamespaceIndentation: Inner
-PointerAlignment: Left
-ReflowComments: false
-SortIncludes: true
-SortUsingDeclarations: true
-SpaceAfterCStyleCast: false
-SpaceAfterLogicalNot: false
-SpaceAfterTemplateKeyword: false
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeCpp11BracedList: true
-SpaceBeforeCtorInitializerColon: false
-SpaceBeforeInheritanceColon: false
-SpaceBeforeParens: ControlStatements
-SpaceBeforeRangeBasedForLoopColon: true
-SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 1
-SpacesInAngles: false
-SpacesInCStyleCastParentheses: false
-SpacesInContainerLiterals: false
-SpacesInParentheses: false
-SpacesInSquareBrackets: false
-Standard: Latest
-UseTab: Never
+MAKEFLAGS := -j $(shell nproc)
+
+.PHONY: run clean clean_all format disasm raw trace
+
+CXX := g++
+CXXFLAGS := -std=c++20 -g -O2 \
+			-Wall -Wextra -Wpedantic \
+			-Wdeprecated -Wunreachable-code -Wduplicated-branches \
+			-Wduplicated-cond -Wswitch-enum \
+			-Wundef -Wunused -Wshadow -Wredundant-decls \
+			-Wdouble-promotion -Wfloat-equal -Wpointer-arith \
+			-Wcast-qual -Wcast-align -Wold-style-cast -Wconversion -Wnarrowing \
+			-Wvla -Wnrvo -Wformat=2 -Wlogical-op -Wnull-dereference \
+			-Woverloaded-virtual \
+			-Werror=return-local-addr -Werror=return-type
+
+LDFLAGS :=
+
+TARGET := main
+BUILDDIR := build
+
+SRCS := main.cpp
+OBJS := ${SRCS:%.cpp=${BUILDDIR}/%.o}
+
+
+${TARGET}: ${OBJS}
+	@ echo "Linking..."
+	@ mkdir -p $(dir $@)
+	@ ${CXX} ${LDFLAGS} $^ -o $@
+
+${BUILDDIR}/%.o: %.cpp
+	@ echo "Compiling ${<}..."
+	@ mkdir -p $(dir $@)
+	@ ${CXX} ${CXXFLAGS} -MD $< -c -o $@
+
+
+run: ${TARGET}
+	./${TARGET}
+
+clean:
+	rm -rf ${TARGET} ${OBJS} ${OBJS:.o=.d}
+
+clean_all: clean
+	rm -rf calls.strace compile_flags.txt
+
+format:
+	clang-format -i ${SRCS}
+
+disasm: ${TARGET}
+	@ objdump -dC -M intel $< | bat --style=plain --wrap=never -l asm
+
+raw: ${TARGET}
+	@ hexyl $< | bat --style=plain
+
+trace: calls.strace
+	@ # This 63 is for the first 63 lines in a tipical C++ glibc program
+	@ tail --lines=+63 $^ | bat --style=plain --wrap=never -l strace
+
+calls.strace: ${TARGET}
+	@ echo "Tracing..."
+	@- strace -o $@ ./${TARGET}
+
+compile_flags.txt: Makefile
+	echo ${CXXFLAGS} | tr ' ' '\n' > $@
+
+
+-include $(OBJS:.o=.d)
