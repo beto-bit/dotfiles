@@ -9,3 +9,6 @@ alias exa='eza --icons'
 
 # fzf preview alias
 alias prev='fzf --preview "bat --color=always {}"'
+
+# Funny
+alias please='sudo $(fc -ln -1)'
