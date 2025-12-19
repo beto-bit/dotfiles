@@ -1,2 +1,0 @@
-eval "$(rtx completion zsh)"
-
