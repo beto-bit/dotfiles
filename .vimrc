@@ -23,6 +23,10 @@ set mouse=a
 set foldmethod=indent
 set foldlevel=2
 
+" For some reason, now I need this to line cursor
+let &t_SI = "\e[5 q"    " changes curor to thin line on insert
+let &t_EI = "\e[1 q"    " changes cursor to block on insert end
+
 " ====== Tabs ======
 " Tabs are four (just in case)
 set tabstop=4
