@@ -10,6 +10,7 @@
 
 	"modules-center": [
 		"custom/left-arrow-dark",
+		"hyprland/language",
 		"clock#4",
 		"custom/right-arrow-dark"
 	],
@@ -63,6 +64,12 @@
 			"(.*) — Mozilla Firefox": "Mozilla Firefox",
 			"imv - (.*)": "imv"
 		}
+	},
+
+	"hyprland/language": {
+		"format": {},
+		"format-en": "[US]",
+		"format-es": "[LA]"
 	},
 
 	"clock#4": {

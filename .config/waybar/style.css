@@ -1,7 +1,9 @@
 * {
-	font-size: 13px;
-	/*font-family: monospace;*/
+	font-size: 12px;
 	font-family: "JetBrainsMono Nerd Font";
+	min-height: 0;
+	margin: 0;
+	padding: 0;
 }
 
 window#waybar {
@@ -19,6 +21,7 @@ window#waybar {
 	background: #1a1a1a;
 }
 
+#language,
 #workspaces,
 #clock.4,
 #backlight,
@@ -73,6 +76,7 @@ window#waybar {
 	color: #ea353a;
 }
 
+#language,
 #clock,
 #backlight,
 #pulseaudio,
