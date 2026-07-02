@@ -10,11 +10,13 @@ hl.monitor {
 -- Env
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 
 -- Programs
 local terminal = "kitty"
 local menu = "rofi -show drun -show-icons"
+local emoji = "hypremoji"
 
 
 -- Autostart
@@ -22,6 +24,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
@@ -38,6 +41,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + B", hl.dsp.window.float{ action = "toggle" })
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(emoji))
 hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | wl-copy"))
 
 -- Special workspace
@@ -152,3 +156,25 @@ hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1} 
 
 -- Default springs
 hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+
+-- XWayland crunchy look
+hl.config {
+    xwayland = { force_zero_scaling = true }
+}
+
+-- Special loox to special programs
+hl.window_rule {
+    name = "emoji-picker",
+    match = {
+        title = "^HyprEmoji$",
+    },
+    float = true,
+}
+
+hl.window_rule {
+    name = "papucontrol",
+    match = {
+        class = "^org.pulseaudio.pavucontrol$",
+    },
+    float = true,
+}

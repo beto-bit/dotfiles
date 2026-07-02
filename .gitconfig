@@ -5,7 +5,7 @@
 [includeIf "hasconfig:remote.*.url:git@github.uni:Alberto-V-USAC/**"]
 	path = ~/gitcfg/.gitconfig-uni
 
-[includeIf "gitdir:~/projects/uni/"]
+[includeIf "gitdir:~/Projects/uni/**"]
 	path = ~/gitcfg/.gitconfig-uni
 
 [filter "lfs"]

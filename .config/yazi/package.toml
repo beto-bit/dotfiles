@@ -4,4 +4,14 @@ deps = []
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-dark"
 rev = "65ba744"
-hash = "13cc1e635e5571d749f606bdbde23a0d"
+hash = "b015f48d0fa35fdc537d84cf4c3cd55a"
+
+[[flavor.deps]]
+use = "kmlupreti/ayu-dark"
+rev = "1da67a8"
+hash = "4358d2053d15bd6855968e2d4646c744"
+
+[[flavor.deps]]
+use = "malick-tammal/monokai"
+rev = "7e709d4"
+hash = "f929d5c5c7fdf1c0aa231c1f49dae88"
