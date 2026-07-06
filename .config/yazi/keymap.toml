@@ -1,0 +1,8 @@
+[[mgr.prepend_keymap]]
+on = '<C-S-d>'
+run = 'shell --block -- kitten dnd %h'
+desc = 'Open Drag-n-Drop Menu'
+
+[[mgr.prepend_keymap]]
+on = 'M'
+run = 'plugin mount'
