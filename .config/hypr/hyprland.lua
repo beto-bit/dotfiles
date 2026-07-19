@@ -32,6 +32,7 @@ end)
 
 -- Binds
 local mainMod = "SUPER"
+local directions = { "up", "down", "left", "right" }
 
 -- Main binds
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -54,9 +55,26 @@ hl.bind(mainMod .. " + right", hl.dsp.focus{ direction = "right" })
 hl.bind(mainMod .. " + up", hl.dsp.focus{ direction = "up" })
 hl.bind(mainMod .. " + down", hl.dsp.focus{ direction = "down" })
 
--- Move and resize
+-- Basic Move
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Swaps and Moves
+for _, dir in ipairs(directions) do
+    hl.bind(mainMod .. "+ SHIFT +" .. dir, hl.dsp.window.move({ direction = dir }))
+end
+
+-- Resize mode
+hl.bind(mainMod .. " + W", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+    hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true}), { repeating = true })
+    hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true}), { repeating = true })
+    hl.bind("up", hl.dsp.window.resize({ x = 0, y = 10, relative = true}), { repeating = true })
+    hl.bind("down", hl.dsp.window.resize({ x = 0, y = -10, relative = true}), { repeating = true })
+
+    hl.bind("escape", hl.dsp.submap("reset"))
+end)
+
 
 -- Workspace binds
 for i = 1, 10 do
@@ -114,8 +132,8 @@ hl.config {
     },
 
     decoration = {
-        rounding = 10,
-        rounding_power = 1.6,
+        rounding = 15,
+        rounding_power = 0.7,
 
         shadow = {
             enabled      = true,
