@@ -3,10 +3,6 @@ alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 
-# Aliases for eza and exa
-alias eza='eza --icons'
-alias exa='eza --icons'
-
 # fzf preview alias
 alias prev='fzf --preview "bat --color=always {}"'
 

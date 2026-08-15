@@ -10,6 +10,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="eastwood"
 
+# eza icons
+zstyle ':omz:plugins:eza' 'icons' yes
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -110,9 +113,6 @@ export EDITOR=vim
 # Some aliases
 source $HOME/.aliases
 
-# eza icons
-zstyle ':omz:plugins:eza' 'icons' yes # <- This currently does not work!
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(fzf --zsh)"
@@ -134,3 +134,5 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Haskell
+export PATH="$HOME/.ghcup/bin:$PATH"
