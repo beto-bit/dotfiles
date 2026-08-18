@@ -6,3 +6,8 @@ desc = 'Open Drag-n-Drop Menu'
 [[mgr.prepend_keymap]]
 on = 'M'
 run = 'plugin mount'
+
+[[mgr.prepend_keymap]]
+on = [ 'g', 'b' ]
+run = 'cd ~/Documents/books/'
+desc = 'Go to Books'

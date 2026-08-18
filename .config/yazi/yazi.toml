@@ -1,7 +1,18 @@
 [opener]
 edit = [
     { run = '$EDITOR "$@"', block = true },
+    { run = 'nvim "$@"', block = true, desc = 'Neovim' },
 ]
+
+# PDF view
+[[open.prepend_rules]]
+mime = 'application/pdf'
+use = [ 'open', 'zathura' ]
+
+[[opener.zathura]]
+run = 'zathura %s1'
+for = 'linux'
+desc = 'Zathura'
 
 # Wallpaper previewer
 [[open.prepend_rules]]
