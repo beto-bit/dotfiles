@@ -1,7 +1,7 @@
 [opener]
 edit = [
-    { run = '$EDITOR "$@"', block = true },
-    { run = 'nvim "$@"', block = true, desc = 'Neovim' },
+    { run = '$EDITOR "%s1"', block = true },
+    { run = 'nvim "%s1"', block = true, desc = 'Neovim' },
 ]
 
 # PDF view
