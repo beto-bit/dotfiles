@@ -7,18 +7,18 @@
 }
 
 window#waybar {
-	background: #292b2e;
+	background: #0F0F0F;
 	color: #fdf6e3;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+	color: #4a4a4a;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+	color: #4a4a4a;
+	background: #0F0F0F;
 }
 
 #language,
@@ -31,7 +31,11 @@ window#waybar {
 #battery,
 #network,
 #tray {
-	background: #1a1a1a;
+	background: #0F0F0F;
+}
+
+#tray {
+    padding: 0 5px 0 5px;
 }
 
 #workspaces button {
