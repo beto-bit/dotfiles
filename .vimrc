@@ -87,8 +87,5 @@ let g:indentLine_char = '▏'
 
 " Color theme
 let ayucolor = 'dark'
-" let g:tokyonight_style = 'night' " available: night, storm
-" let g:tokyonight_enable_italic = 1
-
-" colorscheme tokyonight
 colorscheme ayu
+highlight Normal guibg=#0B0E14
